@@ -6,17 +6,17 @@ module.exports = {
     extend: {
       colors: {
         fuchsia: colors.fuchsia,
+        'button':'#262626',
       },
       listStyleType: {
         square: 'square',
         roman: 'upper-roman',
       },
       fontFamily: {
-        'fa': ['Poppins'],
         'Montserrat':['Montserrat', 'sans-serif'],
       },
-      backgroundImage: {
-        'hero-pattern': "url('./public/images/hero.svg')",
+      backgroundImage:{
+        'advertisement': "url('/public/images/bg.svg')",
        }
     },
   },
