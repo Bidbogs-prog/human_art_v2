@@ -14,7 +14,10 @@ module.exports = {
       fontFamily: {
         'fa': ['Poppins'],
         'Montserrat':['Montserrat', 'sans-serif'],
-      }
+      },
+      backgroundImage: {
+        'hero-pattern': "url('./public/images/hero.svg')",
+       }
     },
   },
   variants: {
