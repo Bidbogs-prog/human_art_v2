@@ -9,6 +9,6 @@
     "postcss-import": "^14.0.2"
   },
   "scripts": {
-    "build-css": "postcss src/styles.css -o public/styles.css --watch"
+    "build-css": "postcss src/styles.css -o public/styles.css"
   }
 }
