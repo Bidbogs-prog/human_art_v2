@@ -20,10 +20,7 @@ module.exports = {
       },
       fontFamily: {
         'Montserrat':['Montserrat', 'sans-serif'],
-      },
-      backgroundImage:{
-        'advertisement': "url('/public/images/bg.svg')",
-       }
+      }
     },
   },
   variants: {
