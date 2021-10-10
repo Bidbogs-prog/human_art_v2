@@ -20,6 +20,9 @@ module.exports = {
       },
       fontFamily: {
         'Montserrat':['Montserrat', 'sans-serif'],
+      },
+      boxShadow: {
+        card: '0 8px 16px 0 rgba(0, 0, 0, 0.2)',
       }
     },
   },
