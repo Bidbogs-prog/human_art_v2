@@ -9,15 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/jpg" href="images/logo-color 1.svg">
     <link rel="stylesheet" href="styles.css">
+    <!-- alpinejs CDN -->
+    <!-- <script defer src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script> -->
 </head>
 
 <body class="bg-gray-100 font-Montserrat md:bg-white">
 
-<!-- Menu tablet and desktop section -->
-<div class="">
-    
-    </div>
-</div>
 <!-- Menu mobile section -->
 <div class="grid grid-cols-3 px-4 my-4 md:hidden">
     <div class="justify-center">
@@ -38,11 +35,11 @@
     </div>
 </div>
 
-<!-- Hero section -->
+<!-- Hero section responsive with teblet and desktop menu -->
 <div class="px-8 pb-8 md:px-0 md:grid md:grid-cols-2 md:pb-0">
-    <div class=""><img src="images/hero.svg" alt=""></div>
+    <div class="pb-4 md:pb-0"><img src="images/hero.svg" alt=""></div>
     <div class="md:flex md:flex-col md:space-y-40">
-        <div class="hidden md:flex md:gap-5 md:text-1xs md:visible md:pt-4 md:justify-center md:font-semibold">
+        <div class="hidden md:flex md:gap-5 md:text-1xs md:block md:pt-4 md:justify-center md:font-semibold">
             <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Acceuil</a></div>
             <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Histoire</a></div>
             <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Services</a></div>
@@ -54,29 +51,43 @@
             <h2 class="pt-2 text-base font-semibold tracking-widest text-gray-400">#Treatment</h2>
             <h1 class="py-1 pr-6 text-4xl font-semibold tracking-wide">Make You Even More <span class="text-green-800">The Best</span> </h1>
             <h3 class="py-2 text-sm tracking-normal text-gray-400">Consult your wishes to get the goods that suit your needs</h3>
-            <button class="px-4 py-2 mt-2 text-xs text-white bg-button">Book An Appointment</button>
+            <button class="px-4 py-2 mt-2 text-xs text-white bg-button md:hidden">Book An Appointment</button>
+            <button class="hidden px-4 py-2 mt-2 text-xs text-white bg-button md:block">Touch Us</button>
         </div>
     </div>
 </div>
 
-<!-- Advertisement section -->
-<div class="grid grid-cols-2"style="background-image: url(images/bg.svg)">
-    <div class="order-2 py-4 text-sm font-semibold text-white">Top 10% best eyelash studios in the world by TripAdvisor</div>
-    <div class="order-1"><img src="images/tripadvisor.svg" alt="tripadvisor"></div>
+<!-- Advertisement section responsive tablet -->
+<div class="grid grid-cols-2 md:bg-no-repeat md:bg-cover md:py-4"style="background-image: url(images/bg.svg)">
+    <div class="order-2 py-4 pr-2 text-sm font-semibold text-white md:pr-16 md:text-lg md:leading-tight">
+        Top 10% best eyelash studios in the world by TripAdvisor
+        <div class="hidden md:text-gray-400 md:tracking-normal md:block md:leading-tight md:text-white md:text-1xs md:font-normal md:pt-4">
+            Rin Beauty Studio opened the first eyelash studio in Bali in 2012. It was owned and managed by a Japanese beauty professional using 
+            advanced quality products and techniques. We were selected as one of the top 10% best eyelash studios in the world by TripAdvisor. 
+        </div>
+    </div>
+    <div class="grid order-1 place-content-center md:grid md:place-content-center">
+        <img class="place-self-center md:hidden" src="images/tripadvisor.svg" alt="tripadvisor">
+        <img class="hidden md:block md:place-self-center md:h-3/4" src="images/tripadvisor-lg.svg" alt="tripadvisor">
+    </div>
 </div>
 
 <!-- History -->
-<div class="py-8">
-    <div class="px-8">
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="60.0005" height="60" fill="#ededed"/>
-            <path d="M30.0011 38.0012C34.4196 38.0012 38.0015 34.4193 38.0015 30.0008C38.0015 25.5823 34.4196 22.0004 30.0011 22.0004C25.5826 22.0004 22.0007 25.5823 22.0007 30.0008C22.0007 34.4193 25.5826 38.0012 30.0011 38.0012Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M26.4 22.8494C23.3729 20.5823 20.9728 19.4893 20.2307 20.2303C19.0567 21.4044 22.4788 26.7306 27.8741 32.1259C33.2704 37.5212 38.5966 40.9433 39.7697 39.7693C40.2007 39.3393 40.0127 38.3482 39.3347 37.0001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>            
-    </div>
-    <div class="px-8">
-        <h1 class="py-4 text-4xl font-semibold tracking-normal">Where we start and here we are</h1>
-        <h2 class="py-2 text-sm tracking-normal leading-tight text-justify text-gray-400">Starting from 2006 and starting with a concern I wanted to look good to support my confidence but at that time there was no eyelash salon in Bali, then I studied in Japan and practiced it with friends and gradually I got recognition from relatives and friends. my environment so that in 2012 I decided to open my first studio and has grown to date opening 4 services as follows</h2>
+<div class="py-8 md:grid md:grid-cols-2 md:px-4 md:py-16">
+    <div class="md:place-self-center">
+        <div class="px-8">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60.0005" height="60" fill="#ededed"/>
+                <path d="M30.0011 38.0012C34.4196 38.0012 38.0015 34.4193 38.0015 30.0008C38.0015 25.5823 34.4196 22.0004 30.0011 22.0004C25.5826 22.0004 22.0007 25.5823 22.0007 30.0008C22.0007 34.4193 25.5826 38.0012 30.0011 38.0012Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M26.4 22.8494C23.3729 20.5823 20.9728 19.4893 20.2307 20.2303C19.0567 21.4044 22.4788 26.7306 27.8741 32.1259C33.2704 37.5212 38.5966 40.9433 39.7697 39.7693C40.2007 39.3393 40.0127 38.3482 39.3347 37.0001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+        </div>
+        <div class="px-8">
+            <h1 class="py-4 text-4xl font-semibold tracking-normal md:text-5xl">Where we start and here we are</h1>
+            <h2 class="py-2 text-sm tracking-normal leading-tight text-justify text-gray-400 md:text-xs">Starting from 2006 and starting with a concern I 
+                wanted to look good to support my confidence but at that time there was no eyelash salon in Bali, then I studied in Japan and practiced 
+                it with friends and gradually I got recognition from relatives and friends. my environment so that in 2012 I decided to open my first studio and has grown to date opening 4 services as follows</h2>
+        </div>
     </div>
     <div class="flex flex-wrap gap-4 justify-center px-8 pt-6">
         <div class="relative w-36 h-44 bg-green-400 bg-no-repeat bg-contain" style="background-image: url(images/eyes.svg)">
@@ -91,7 +102,7 @@
 </div>
 
 <!-- Gallery section -->
-<div class="grid grid-cols-4 px-8 pb-4 mx-auto">
+<div class="grid hidden grid-cols-4 px-8 pb-4 mx-auto">
     <div class="col-span-4 pb-4 text-2xl font-semibold text-center">
         My Beautiful <span class="text-green-800">Friends</span>
     </div>        
@@ -112,14 +123,15 @@
 </div>
 
 <!-- Testimonials section -->
-<div class="flex flex-col mb-8">
+<div class="flex flex-col mb-8 md:bg-gray-100">
     <div class="py-4 text-2xl font-semibold text-center">
         Stories from <span class="text-green-800">Customers</span>
     </div>  
     <div class="flex flex-nowrap">
         <div class="px-4 mx-8 mb-4 bg-white">
             <h1 class="py-4 text-xs font-bold text-center">Combo Eyelash Extention + Gel Nail Art</h1>
-            <p class="text-xs tracking-tight leading-tight text-justify">I am really satisfied with their Eyelash Extention! I am giving this review after 8 weeks after I left and the eyelash was really last long and not damaging my original lash .....</p>
+            <p class="text-xs tracking-tight leading-tight text-justify">I am really satisfied with their Eyelash Extention! I am giving this review 
+                after 8 weeks after I left and the eyelash was really last long and not damaging my original lash .....</p>
             <div class="grid justify-items-center py-4">
                 <img class="py-2" src="images/298shm.svg" alt="profil-pic">
                 <h1 class="text-xs font-bold">298shm</h1>
@@ -130,16 +142,16 @@
     <button class="py-2 mx-32 my-4 text-center border-2 border-opacity-50 border-solid border-button">Show All</button>      
 </div>
 
-<!-- Interests section -->
+<!-- Interests section responsive tablet -->
 <div class="grid grid-cols-3 place-items-center px-8">
-    <div class="col-span-2 py-4 font-semibold text-light-100">
+    <div class="col-span-2 py-4 font-semibold text-light-100 md:place-self-start md:col-span-1">
         You Might <span class="text-green-800">Be Interested</span>
     </div>
-      <div class="lignbreak">
+      <div class="md:col-span-2 md:justify-self-start">
           <img src="images/ligne break.svg" alt="">
       </div>
 </div>
-<div class="flex flex-wrap gap-4 justify-center px-8 py-2 mb-8">
+<div class="flex flex-wrap gap-4 justify-center px-8 py-2 mb-8 md:space-x-6">
     <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain" style="background-image: url(images/nail\ art.svg)">
         <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs">
             <div class="pb-2 text-xs font-bold tracking-tighter">The Coolest Nail Art 2021</div>
@@ -195,12 +207,12 @@
 </div>
 
 <!-- Advertisement 2 section -->
-<div class="grid grid-cols-2 place-items-center pr-4 pl-8"style="background-image: url(images/bg.svg)">
+<div class="grid grid-cols-2 place-items-center pr-4 pl-8 md:bg-no-repeat md:bg-cover"style="background-image: url(images/bg.svg)">
     <div class="order-1 py-4 font-semibold text-white">
-        <div class="pb-2 text-sm font-semibold">let's take time to get to know each other</div>
-        <div class="font-light text-2xs">set a time so we can meet to get to know each other</div>
+        <div class="pb-2 text-sm font-semibold md:text-xl md:pr-4">let's take time to get to know each other</div>
+        <div class="font-light text-2xs md:text-xs">set a time so we can meet to get to know each other</div>
     </div>
-    <div class="order-2 bg-white"><button class="px-4 py-2 text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-900 to-black">Booking <br> Appointment</button></div>
+    <div class="order-2 bg-white"><button class="px-4 py-2 text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-900 to-black md:px-8">Booking <br class="md:hidden"> Appointment</button></div>
 </div>
 
 <!-- Footer section -->
@@ -218,6 +230,88 @@
             &copy; 2021 All Rights Reserved.<br>Design By Fahmi Auliya Rohman<br>Coded by Aimdexter & Bidbogs-prog
         </div>
     </div>
+    
+
+    
+    <!-- testimonial responsive
+    <section class="antialiased text-gray-600 bg-gray-200 sans-serif">
+
+        <div class="container flex overflow-hidden flex-col mx-auto my-10 shadow-sm md:my-24 md:flex-row" x-data="{ testimonialActive: 2 }" x-cloak>
+          <div class="flex relative flex-col justify-center py-2 w-full bg-indigo-700 md:py-24 md:w-1/2 item-center">
+      
+            <div class="absolute top-0 left-0 z-10 w-16 h-16 grid-indigo md:w-40 md:h-40 md:ml-20 md:mt-24"></div>
+      
+            <div class="relative z-20 px-6 py-2 mb-0 text-2xl font-semibold tracking-tight leading-tight text-indigo-100 md:text-5xl md:py-6 md:px-1 md:w-64 md:mx-auto">
+              <span class="md:block">What Our</span>
+              <span class="md-block">Customers</span>
+              <span class="block">Are Saying!</span>
+            </div>
+      
+            <div class="hidden absolute right-0 bottom-0 mr-4 mb-4 md:block">
+              <button class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-l-full border-r focus:outline-none hover:text-indigo-500" x-on:click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1">
+                &#8592;
+              </button><button class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-r-full focus:outline-none hover:text-indigo-500" x-on:click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1">
+                &#8594;
+              </button>
+            </div>
+          </div>
+      
+          <div class="bg-gray-100 md:w-1/2">
+            <div class="flex relative flex-col h-full">
+      
+              <div class="absolute top-0 left-0 mt-3 ml-4 md:mt-5 md:ml-12">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-indigo-200 fill-current md:w-16 md:h-16" viewBox="0 0 24 24">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" /></svg>
+              </div>
+      
+              <div class="relative z-10 h-full">
+                <div x-show.immediate="testimonialActive === 1">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 1">
+                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                  </p>
+                </div>
+      
+                <div x-show.immediate="testimonialActive === 2">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 2">
+                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                  </p>
+                </div>
+      
+                <div x-show.immediate="testimonialActive === 3">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 3">
+                    Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                  </p>
+                </div>
+              </div>
+      
+              <div class="flex justify-center items-center my-4">
+                <button @click.prevent="testimonialActive = 1" class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 1, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 1 }">JD</button>
+                <button @click.prevent="testimonialActive = 2" class="inline-block mx-2 w-16 h-16 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 2, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 2 }">WD</button>
+                <button @click.prevent="testimonialActive = 3" class="inline-block mx-2 w-12 h-12 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 3, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 3 }">JW</button>
+              </div>
+      
+              <div class="flex justify-center px-6 pt-2 pb-6 md:py-6">
+                <div class="text-center" x-show="testimonialActive == 1">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">John Doe</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">CEO, ABC Inc.</small>
+                </div>
+      
+                <div class="text-center" x-show="testimonialActive == 2">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">Winter Doe</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">CTO, XYZ Corp.</small>
+                </div>
+      
+                <div class="text-center" x-show="testimonialActive == 3">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">John Wick</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">Product Manager, Fake Corp.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </section> -->
+
 <script src="" async defer></script>
 </body>
 
