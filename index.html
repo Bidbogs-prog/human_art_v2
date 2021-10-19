@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="images/logo-color 1.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- alpinejs CDN -->
+    <!-- <script defer src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script> -->
+</head>
+
+<body class="bg-gray-100 font-Montserrat md:bg-white ">
+
+<!-- Menu mobile section -->
+<div class="grid grid-cols-3 px-4 my-4 md:hidden">
+    <div class="justify-center">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 22H25M7 10H25H7ZM7 16H25H7Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+    </div>
+    <div class="justify-self-center">
+        <svg width="75" height="30" viewBox="0 0 75 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect width="75" height="30" fill="url(#pattern0)"/>
+            <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0" transform="scale(0.00333333 0.00833333)"/>
+            </pattern>
+            <image id="image0" width="300" height="120" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAB4CAMAAAB/yz8SAAABg1BMVEVHcExramqOdVmfe1Brampramprampsh3h2bmVxiHWfe1Cfe1Bramprampramprampramqfe1Ajt7dramqfe1Bramojt7dramojt7dramqfe1Bramojt7dramqfe1Bramojt7cjt7efe1Ajt7efe1Ajt7cjt7efe1Brampramprampramprampramqfe1Ajt7efe1Ajt7efe1Cfe1Ajt7cjt7cjt7cjt7efe1Cfe1Cfe1Ajt7cjt7dramqfe1Cfe1Bramojt7cjt7dramqfe1Ajt7efe1Bramojt7cjt7dramprampramqfe1Cfe1Cfe1Bramqfe1Ajt7cjt7dramojt7dramqfe1Bramqfe1Cfe1Ajt7cjt7dramqfe1Ajt7efe1Ajt7efe1Cfe1Ajt7cit7cjt7cjt7dramqfe1Cfe1Ajt7cjt7cjt7drampramqfe1Bramqfe1Cfe1Bramqfe1Cfe1Ajt7efe1Brampramqfe1Bramprampramojt7efe1BSj4d3AAAAfnRSTlMA8AV29M7fAQgD4hwS0vlclxMRnukNB7q/UzL+65DufLKrWPEiyvy8KDzE6EJv+TLbQZ3VjG7f5ZU2slNlg05CETq5pmULKkjY0YphTVs8yXfESx0fXa9gGPz0eCOBmPhrg6tTlJouKdlwe6QZFS1o0LWOpjeADZ9IV3OGMj8Y/BirAAAUd0lEQVR4XuyZ71vaWBbHjxQBqsGIFfHBVLssrQVdxlZhd5St1jIoZWdoRWVHbKettsw6hWGHZ7t28SZ/+h4u90dCEizMPPPMC78vNAk59577ybn3nJuA0I1udKMb3ehGN4rkIz2BVCAQ8NODIB6BEJ4FwSxPgIpfFSZcHsvVoEtDHjxjbQkFqQtSfadr9/Yye5n98zTYDPGCrXWLY34wy09HKNUuF4u50iw463y/p8S9rTC7NJtUWr3bS4qirAJXU1HaYNbxzz1998vxNDCVlHEuRQOuojKunAJXWVGaIKQpSglgBu2k5fNVxWQN3TO/ZH2+cLYTDv/08mJhvd/wM8CpojwHIVVRVujBVO8+JTlzacIz21KSEs3DOUJVnwJHJXShzCZQTYZIapIePUdDn2jrlJAVMOtfhtBXfwdgJlJJ4ZIPz5Sg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"/>
+            </defs>
+            </svg>            
+    </div>
+</div>
+
+<!-- Hero section responsive with teblet and desktop menu -->
+<div class="px-8 pb-8 md:px-0 md:grid md:grid-cols-2 md:pb-0">
+    <div class="pb-4 md:pb-0 lg:hidden"><img src="images/hero.svg" alt=""></div>
+    <div class="hidden lg:block"><img src="images/lg-hero.svg" alt=""></div>
+    
+    <div class="md:flex md:flex-col md:space-y-40 lg:justify-between">
+        <div class="hidden md:flex md:gap-5 md:text-1xs md:pt-4 md:justify-center md:font-normal lg:gap-8 lg:pt-10">
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Acceuil</a></div>
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Histoire</a></div>
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Services</a></div>
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Encadrement</a></div>
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Blog</a></div>
+            <div class=""><a class="border-b-2 border-white hover:border-green-800" href="">Contact</a></div>
+        </div>
+        <div class="md:place-self-center md:mx-4">
+            <h2 class="pt-2 text-base font-semibold tracking-widest text-gray-400">#Treatment</h2>
+            <h1 class="py-1 pr-6 text-4xl font-semibold tracking-wide">Make You Even More <span class="text-green-800">The Best</span> </h1>
+            <h3 class="py-2 text-sm tracking-normal text-gray-400">Consult your wishes to get the goods that suit your needs</h3>
+            <button class="px-4 py-2 mt-2 text-xs text-white bg-button lg:mb-10">Book An Appointment</button>
+        </div>
+    </div>
+</div>
+
+<!-- Advertisement section responsive tablet -->
+<div class="grid grid-cols-2 md:bg-no-repeat md:bg-cover md:py-4 lg:py-7"style="background-image: url(images/bg.svg)">
+    <div class="order-2 py-4 pr-2 text-sm font-semibold text-white md:pr-16 md:text-lg md:leading-tight lg:text-xl">
+        Top 10% best eyelash studios in the world by TripAdvisor
+        <div class="hidden md:text-gray-400 md:tracking-normal md:block md:leading-tight md:text-1xs md:font-normal md:pt-4 lg:text-xs">
+            Rin Beauty Studio opened the first eyelash studio in Bali in 2012. It was owned and managed by a Japanese beauty professional using 
+            advanced quality products and techniques. We were selected as one of the top 10% best eyelash studios in the world by TripAdvisor. 
+        </div>
+    </div>
+    <div class="grid order-1 place-content-center md:grid md:place-content-center">
+        <img class="place-self-center md:hidden" src="images/tripadvisor.svg" alt="tripadvisor">
+        <img class="hidden md:block md:place-self-center md:h-3/4 lg:h-4/5" src="images/tripadvisor-lg.svg" alt="tripadvisor">
+    </div>
+</div>
+
+<!-- History -->
+<div class="py-8 md:grid md:grid-cols-2 md:px-4 md:py-16">
+    <div class="md:place-self-center lg:max-w-sm">
+        <div class="px-8">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60.0005" height="60" fill="#ededed"/>
+                <path d="M30.0011 38.0012C34.4196 38.0012 38.0015 34.4193 38.0015 30.0008C38.0015 25.5823 34.4196 22.0004 30.0011 22.0004C25.5826 22.0004 22.0007 25.5823 22.0007 30.0008C22.0007 34.4193 25.5826 38.0012 30.0011 38.0012Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M26.4 22.8494C23.3729 20.5823 20.9728 19.4893 20.2307 20.2303C19.0567 21.4044 22.4788 26.7306 27.8741 32.1259C33.2704 37.5212 38.5966 40.9433 39.7697 39.7693C40.2007 39.3393 40.0127 38.3482 39.3347 37.0001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+        </div>
+        <div class="px-8">
+            <h1 class="py-4 text-4xl font-semibold tracking-normal md:text-5xl lg:text-5xl">Where we start and here we are</h1>
+            <h2 class="py-2 text-sm tracking-normal leading-tight text-justify text-gray-400 md:text-xs lg:text-xs">Starting from 2006 and starting with a concern I 
+                wanted to look good to support my confidence but at that time there was no eyelash salon in Bali, then I studied in Japan and practiced 
+                it with friends and gradually I got recognition from relatives and friends. my environment so that in 2012 I decided to open my first studio and has grown to date opening 4 services as follows</h2>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-4 justify-center px-0 pt-6 md:px-8 lg:gap-12 lg:justify-around">
+        <div class="relative w-36 h-44 bg-green-400 bg-no-repeat bg-contain lg:hidden" style="background-image: url(images/eyes.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Eyelash Extensions</div>
+        </div>
+        <div class="relative w-48 h-60 bg-green-400 bg-no-repeat bg-contain hidden lg:block" style="background-image: url(images/lg-eye.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Eyelash Extensions</div>
+        </div>
+        <div class="relative w-36 h-44 bg-green-400 bg-no-repeat bg-contain  lg:hidden" style="background-image: url(images/shoulder.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Tatoo Removal</div>
+        </div>
+        <div class="relative w-48 h-60 bg-green-400 bg-no-repeat bg-contain hidden lg:block" style="background-image: url(images/lg-shoulder.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Eyelash Extensions</div>
+        </div>
+        <div class="relative w-36 h-44 bg-green-400 bg-no-repeat bg-contain lg:hidden" style="background-image: url(images/neck.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Gel Nail Art</div>
+        </div>
+        <div class="relative w-48 h-60 bg-green-400 bg-no-repeat bg-contain hidden lg:block" style="background-image: url(images/lg-neck.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Eyelash Extensions</div>
+        </div>
+        <div class="relative w-36 h-44 bg-green-400 bg-no-repeat bg-contain lg:hidden" style="background-image: url(images/face.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Permanent Makeup</div>
+        </div>
+        <div class="relative w-48 h-60 bg-green-400 bg-no-repeat bg-contain hidden lg:block" style="background-image: url(images/lg-face.svg)">
+            <div class="absolute inset-x-0 bottom-0 py-2 text-xs text-center text-white bg-button">Eyelash Extensions</div>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery section -->
+<div class="hidden grid-cols-4 px-8 pb-4 mx-auto">
+    <div class="col-span-4 pb-4 text-2xl font-semibold text-center">
+        My Beautiful <span class="text-green-800">Friends</span>
+    </div>        
+    <div class="w-full rounded"><img src="images/1.png" alt="image"></div>
+    <div class="w-full rounded"><img src="images/2.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/3.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/4.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/5.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/6.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/7.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/8.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/9.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/10.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/11.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/12.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/13.png" alt=""></div>
+    <div class="w-full rounded"><img src="images/14.png" alt=""></div>
+</div>
+
+<!-- Testimonials section -->
+<div class="flex flex-col mb-8 md:bg-gray-100 ">
+    <div class="py-4 text-2xl font-semibold text-center">
+        Stories from <span class="text-green-800">Customers</span>
+    </div>  
+    <div class="flex flex-nowrap lg:flex-wrap lg:justify-center lg:items-center">
+        <div class="px-4 mx-8 mb-4 bg-white lg:w-80 lg:h-80 lg:m-0 lg:flex lg:flex-col lg:justify-around">
+            <h1 class="py-4 text-xs font-bold text-center lg:text-sm">Combo Eyelash Extention + Gel Nail Art</h1>
+            <p class="text-xs tracking-tight leading-tight text-justify lg:text-sm">I am really satisfied with their Eyelash Extention! I am giving this review 
+                after 8 weeks after I left and the eyelash was really last long and not damaging my original lash .....</p>
+            <div class="grid justify-items-center py-4">
+                <img class="py-2" src="images/298shm.svg" alt="profil-pic">
+                <h1 class="text-sm font-bold">298shm</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center"><button class="px-4 py-2 my-4 text-center border-2 border-opacity-50 border-solid border-button">Show All</button></div>
+</div>
+
+<!-- Interests section responsive tablet -->
+<div class="grid grid-cols-3 place-items-center px-0 md:px-8 lg:flex lg:ml-9">
+    <div class="col-span-2 py-4 font-semibold text-light-100 md:place-self-start md:col-span-1 lg:text-2xl">
+        You Might <span class="text-green-800">Be Interested</span>
+    </div>
+      <div class="md:col-span-2 md:justify-self-start lg:col-span-1 lg:col-start-1 lg:col-end-2 lg:justify-self-end lg:self-center">
+          <img class="ml-2"  src="images/ligne break.svg" alt="">
+      </div>
+</div>
+<div class="flex flex-wrap gap-4 justify-center px-0 py-2 mb-8 md:space-x-6 lg:space-x-0 md:px-8 lg:grid  lg:grid-rows-2 lg:grid-cols-3 lg:justify-items-center">
+    <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain shadow-card lg:w-60 lg:h-72 lg:justify-self-end" style="background-image: url(images/nail\ art.svg)">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs">
+            <div class="pb-2 text-xs font-bold tracking-tighter">The Coolest Nail Art 2021</div>
+            <p class="pb-4 tracking-tighter leading-relaxed tegitxt-justify text-2xs lg:text-1xs ">Get eyebrows, eyeliner and lips on point all day by Japanese beauty professional.
+            </p>
+            <div class="grid grid-cols-4 lg:pt-6 lg:flex ">
+                <div class="col-span-2 tracking-tighter underline text-1xs">View All</div>
+                    <div class="col-span-2 place-self-center lg:ml-3">
+                        <img src="images/arrow.svg" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain shadow-card lg:w-60 lg:h-72" style="background-image: url(images/tatto\ removal.svg)">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs">
+            <div class="pb-2 text-xs font-bold ">11 Things About Tattoo Removal</div>
+            <p class="pb-4 tracking-tighter leading-snug text-justify text-2xs lg:text-1xs lg:pb-5">If you've heard anything about laser tattoo removal, it's probably along the lines of it being insanely painful ....
+            </p>
+            <div class="grid grid-cols-4 lg:pt-1 lg:flex">
+                <div class="col-span-2 tracking-tighter underline text-1xs">View All</div>
+                    <div class="col-span-2 place-self-center lg:ml-3">
+                        <img src="images/arrow.svg" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain shadow-card lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 lg:w-60 lg:h-72 " style="background-image: url(images/lashesh.svg)">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs">
+            <div class="pb-2 text-xs font-bold">Well-Rested Lashesh</div>
+            <p class="pb-4 tracking-tighter leading-snug text-justify text-2xs lg:text-1xs">Well-rested lashesh is trending right now because its relaxed and charismatic shape makes the eyes look sharp and this shape is suitable for slightly slanted eyes ...
+            </p>
+            <div class="grid grid-cols-4 lg:pt-1 lg:flex">
+                <div class="col-span-2 tracking-tighter underline text-1xs">View All</div>
+                    <div class="col-span-2 place-self-center lg:ml-3">
+                        <img src="images/arrow.svg" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain shadow-card lg:w-60 lg:h-72 lg:justify-self-end" style="background-image: url(images/false\ nails.svg)">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs">
+            <div class="pb-2 text-xs font-bold">Make False Nails Last Longer</div>
+            <p class="pb-4 tracking-tighter leading-snug text-justify text-2xs lg:text-1xs">Fake nails will make you look even more beautiful... until they come off, you're done! Luckily, there are a few fake nail tricks you can try to prevent this from happening
+            </p>
+            <div class="grid grid-cols-4 lg:pt-1 lg:flex">
+                <div class="col-span-2 tracking-tighter underline text-1xs">View All</div>
+                    <div class="col-span-2 place-self-center lg:ml-3">
+                        <img src="images/arrow.svg" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-36 h-60 bg-white bg-no-repeat bg-contain shadow-card hidden lg:block lg:col-span-2 lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-3 justify-self-center lg:w-80 lg:h-full" style="background-image: url(images/old.svg)">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-xs ">
+            <div class="pb-2 text-xs font-bold lg:text-xl">Appreciating Yourself Is A Way Of Being Grateful</div>
+            <p class="pb-4 tracking-tighter leading-snug text-justify text-2xs lg:text-1xs">Get eyebrows, eyeliner and lips on point all day by Japanese beauty professional.
+                Get eyebrows, eyeliner and lips on point all day by Japanese beauty professional.                
+            </p>
+            <div class="grid grid-cols-4 lg:pt-4 lg:flex">
+                <div class="col-span-2 tracking-tighter underline text-1xs">View All</div>
+                    <div class="col-span-2 place-self-center lg:ml-3">
+                        <img src="images/arrow.svg" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Advertisement 2 section -->
+<div class="grid grid-cols-2 place-items-center pl-4 bg-no-repeat bg-cover md:pl-8 md:pr-4 md:bg-no-repeat md:bg-cover lg:py-16"style="background-image: url(images/bg.svg)">
+    <div class="order-1 py-4 font-semibold text-white">
+        <div class="pb-2 text-sm font-semibold md:text-xl md:pr-4 lg:text-2xl">let's take time to get to know each other</div>
+        <div class="font-light text-2xs md:text-xs lg:text-sm lg:pr-32 text-gray-300 ">Book a time and consult with us so we can find out what you need</div>
+    </div>
+    <div class="order-2 bg-white lg:order-first"><button class="px-4 py-2 text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-900 to-black md:px-8 lg:py-4 lg:px-10">Booking <br class="md:hidden"> Appointment</button></div>
+</div>
+
+<!-- Footer section -->
+    <div class="flex flex-col gap-12 justify-center py-8 text-center lg:flex-row-reverse">
+        <div class="self-center lg:self-start">
+            <div class="text-base font-bold mb-3">Follow Us</div>
+            <div class="flex flex-row gap-8 self-center">
+               <a href="#"><img src="images/Facebook.svg" alt=""></a>
+              <a href="#"><img src="images/Twitter.svg" alt=""></a>
+               <a href="#"><img src="images/Instagram.svg" alt=""></a>
+            </div>
+        </div>
+
+        <div class="hidden lg:block text-left">
+            <h3 class="text-base font-bold mb-3">Support</h3>
+            <ul class="text-sm">
+                <li> <a href=""> Contact</a></li>
+                <li> <a href=""> FAQ</a></li>
+                <li> <a href=""> Booking Appointment</a></li>
+                
+            </ul>
+        </div>   
+    
+        <div class="hidden lg:block text-left">
+            <h3 class="text-base font-bold mb-3">Services</h3>
+            <ul class="text-sm">
+                <li> <a href=""> Eyelash Extensions</a></li>
+                <li> <a href=""> Get Nail Art</a></li>
+                <li> <a href=""> Tatoo Removal</a></li>
+                <li> <a href=""> Permanent Makeup</a></li>
+            </ul>
+
+        </div>
+    
+        <div class="hidden lg:block text-left">
+            <h3 class="text-base font-bold mb-3">Rin Beauty Studio</h3>
+            <div>
+                <h3 class="text-base font-bold">Seminyak</h3>
+                <ul class="mb-7 text-sm">
+                    <li>Jl. Mertanadi no.92 Kerobokan</li>
+                    <li>081 999 045 597 | 0361 847 5754</li>
+                    <li>info@rinbeautystudio.com</li>
+                </ul>
+            </div>
+        
+    
+            <div>
+                <h3 class="text-base font-bold">Canggu</h3>
+                <ul class="mb-7 text-sm">
+                    <li>Jl. Pantai Batu Bolong No.46D Canggu</li>
+                    <li>081 999 045 596</li>
+                    <li>info@rinbeautystudio.com</li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="text-base font-bold">Denpasar</h3>
+                <ul class="mb-7 text-sm">
+                    <li>Jl. Teuku Umar No. 43 Denpasar</li>
+                    <li>081 999 045 598</li>
+                    <li>info@rinbeautystudio.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="flex flex-col content-center text-center">
+        <div class="grid grid-cols-1 justify-items-center mb-3">
+            <img src="images/ligne.svg" alt="">
+        </div>
+        <div class="text-xs font-semibold self-center lg:hidden">
+            &copy; 2021 All Rights Reserved.<br>Design By Fahmi Auliya Rohman<br>Coded by Aimdexter & Bidbogs-prog
+        </div>
+        <div class="text-xs font-semibold self-center hidden lg:block">
+            &copy; 2021 All Rights Reserved. Design By Fahmi Auliya Rohman Coded by Aimdexter & Bidbogs-prog
+        </div>
+    </div>
+    
+        
+    
+
+    
+    <!-- testimonial responsive
+    <section class="antialiased text-gray-600 bg-gray-200 sans-serif">
+
+        <div class="container flex overflow-hidden flex-col mx-auto my-10 shadow-sm md:my-24 md:flex-row" x-data="{ testimonialActive: 2 }" x-cloak>
+          <div class="flex relative flex-col justify-center py-2 w-full bg-indigo-700 md:py-24 md:w-1/2 item-center">
+      
+            <div class="absolute top-0 left-0 z-10 w-16 h-16 grid-indigo md:w-40 md:h-40 md:ml-20 md:mt-24"></div>
+      
+            <div class="relative z-20 px-6 py-2 mb-0 text-2xl font-semibold tracking-tight leading-tight text-indigo-100 md:text-5xl md:py-6 md:px-1 md:w-64 md:mx-auto">
+              <span class="md:block">What Our</span>
+              <span class="md-block">Customers</span>
+              <span class="block">Are Saying!</span>
+            </div>
+      
+            <div class="hidden absolute right-0 bottom-0 mr-4 mb-4 md:block">
+              <button class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-l-full border-r focus:outline-none hover:text-indigo-500" x-on:click="testimonialActive = testimonialActive === 1 ? 3 : testimonialActive - 1">
+                &#8592;
+              </button><button class="w-12 h-10 font-bold text-gray-500 bg-gray-100 rounded-r-full focus:outline-none hover:text-indigo-500" x-on:click="testimonialActive = testimonialActive >= 3 ? 1 : testimonialActive + 1">
+                &#8594;
+              </button>
+            </div>
+          </div>
+      
+          <div class="bg-gray-100 md:w-1/2">
+            <div class="flex relative flex-col h-full">
+      
+              <div class="absolute top-0 left-0 mt-3 ml-4 md:mt-5 md:ml-12">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-indigo-200 fill-current md:w-16 md:h-16" viewBox="0 0 24 24">
+                  <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" /></svg>
+              </div>
+      
+              <div class="relative z-10 h-full">
+                <div x-show.immediate="testimonialActive === 1">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 1">
+                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                  </p>
+                </div>
+      
+                <div x-show.immediate="testimonialActive === 2">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 2">
+                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                  </p>
+                </div>
+      
+                <div x-show.immediate="testimonialActive === 3">
+                  <p class="px-6 py-6 text-xl italic font-normal text-gray-600 serif md:px-16 md:py-10 md:text-2xl" x-show.transition="testimonialActive == 3">
+                    Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                  </p>
+                </div>
+              </div>
+      
+              <div class="flex justify-center items-center my-4">
+                <button @click.prevent="testimonialActive = 1" class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 1, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 1 }">JD</button>
+                <button @click.prevent="testimonialActive = 2" class="inline-block mx-2 w-16 h-16 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 2, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 2 }">WD</button>
+                <button @click.prevent="testimonialActive = 3" class="inline-block mx-2 w-12 h-12 font-bold text-center bg-indigo-600 rounded-full shadow-xs focus:outline-none focus:shadow-outline" :class="{'h-12 w-12 opacity-25 bg-indigo-300 text-gray-600': testimonialActive != 3, 'h-16 w-16 opacity-100 bg-indigo-600 text-white': testimonialActive == 3 }">JW</button>
+              </div>
+      
+              <div class="flex justify-center px-6 pt-2 pb-6 md:py-6">
+                <div class="text-center" x-show="testimonialActive == 1">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">John Doe</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">CEO, ABC Inc.</small>
+                </div>
+      
+                <div class="text-center" x-show="testimonialActive == 2">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">Winter Doe</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">CTO, XYZ Corp.</small>
+                </div>
+      
+                <div class="text-center" x-show="testimonialActive == 3">
+                  <h2 class="text-sm font-bold leading-tight text-gray-700 md:text-base">John Wick</h2>
+                  <small class="text-xs text-gray-500 truncate md:text-sm">Product Manager, Fake Corp.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </section> -->
+
+<script src="" async defer></script>
+</body>
+
+</html>
