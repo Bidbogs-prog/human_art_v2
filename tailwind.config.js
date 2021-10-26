@@ -27,7 +27,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+        linearGradients: ['hover', 'responsive'],
+    },
   },
   plugins: [],
 }
